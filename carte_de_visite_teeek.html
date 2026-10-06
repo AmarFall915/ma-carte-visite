@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<style>
+  @page {
+    size: 85mm 55mm;
+    margin: 0;
+  }
+  *, *::before, *::after {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', 'Liberation Sans', 'DejaVu Sans', sans-serif;
+    background-color: transparent;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .card-page {
+    width: 85mm;
+    height: 55mm;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+  }
+
+  /* --- RECTO: BEIGE / ÉCRU --- */
+  .card-recto {
+    background-color: #ebdcd0;
+    color: #38150d;
+  }
+
+  .recto-logo-wrap {
+    position: absolute;
+    left: 9mm;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24mm;
+    text-align: center;
+  }
+
+  .recto-divider {
+    position: absolute;
+    left: 36.5mm;
+    top: 11mm;
+    bottom: 11mm;
+    width: 0.65px;
+    background-color: rgba(56, 21, 13, 0.32);
+  }
+
+  .recto-info-wrap {
+    position: absolute;
+    left: 42.5mm;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 6mm;
+  }
+
+  .person-name {
+    font-size: 11.2pt;
+    font-weight: 800;
+    letter-spacing: -0.2px;
+    color: #38150d;
+    line-height: 1.15;
+    margin: 0 0 1.2mm 0;
+  }
+
+  .person-role {
+    font-size: 7.2pt;
+    font-weight: 500;
+    color: #5d3429;
+    letter-spacing: 0.2px;
+    margin: 0 0 4.2mm 0;
+  }
+
+  .contact-block {
+    font-size: 7.2pt;
+    line-height: 1.58;
+    color: #38150d;
+    font-weight: 500;
+  }
+
+  .contact-item {
+    margin: 0;
+    letter-spacing: 0.15px;
+  }
+
+  /* --- VERSO: BRUN CHOCOLAT INTENSE --- */
+  .card-verso {
+    background-color: #38140c;
+    color: #f7ebe1;
+  }
+
+  .verso-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 76mm;
+  }
+
+  .brand-logo-container {
+    margin-bottom: 2.2mm;
+  }
+
+  .brand-tagline {
+    font-size: 6.8pt;
+    font-weight: 400;
+    letter-spacing: 1.8px;
+    color: #d8b6ab;
+    margin: 0;
+    text-transform: none;
+  }
+</style>
+</head>
+<body>
+
+  <!-- RECTO (Face coordonnées) -->
+  <div class="card-page card-recto">
+    <div class="recto-logo-wrap">
+      <svg width="65" height="78" viewBox="0 0 100 118">
+        <g fill="#38150d" transform="rotate(-6 50 55)">
+          <path d="M 52 14 C 30 14 14 30 14 52 C 14 72 28 85 52 87 C 72 89 87 83 93 78 L 93 64 C 84 70 70 73 52 71 C 34 69 29 58 29 48 L 93 48 C 93 24 76 14 52 14 Z M 30 37 C 32 26 40 23 52 23 C 64 23 74 26 76 37 Z" />
+          <path d="M 12 88 L 12 112 L 26 112 L 26 100 C 33 93 43 90 53 90 C 63 90 73 93 79 100 L 79 112 L 93 112 L 93 88 C 78 89 65 87 53 86 C 39 85 24 87 12 88 Z" />
+        </g>
+      </svg>
+    </div>
+
+    <div class="recto-divider"></div>
+
+    <div class="recto-info-wrap">
+      <div class="name-title-block">
+        <h1 class="person-name">John Smith</h1>
+        <p class="person-role">Founder &amp; CEO</p>
+      </div>
+      <div class="contact-block">
+        <p class="contact-item">+1 234 567 8900</p>
+        <p class="contact-item">john@teeek.com</p>
+        <p class="contact-item">www.teeek.com</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- VERSO (Face marque) -->
+  <div class="card-page card-verso">
+    <div class="verso-inner">
+      <div class="brand-logo-container">
+        <svg width="185" height="58" viewBox="0 0 246 76">
+          <g fill="#f8ede4">
+            <!-- 't' -->
+            <path d="M 28 8 L 16 8 L 16 18 L 8 18 L 8 28 L 16 28 L 16 54 C 16 63 22 67 32 67 L 38 67 L 38 57 L 32 57 C 29 57 28 55 28 51 L 28 28 L 38 28 L 38 18 L 28 18 Z" />
+            <!-- first 'e' -->
+            <path d="M 70 24 C 53 24 42 36 42 51 C 42 66 54 78 71 78 C 83 78 92 72 96 65 L 86 59 C 83 63 78 67 71 67 C 62 67 54 61 53 53 L 97 53 C 97 36 86 24 70 24 Z M 54 44 C 55 36 61 31 70 31 C 78 31 85 36 86 44 Z" />
+            <!-- second 'e' -->
+            <path d="M 120 24 C 103 24 92 36 92 51 C 92 66 104 78 121 78 C 133 78 142 72 146 65 L 136 59 C 133 63 128 67 121 67 C 112 67 104 61 103 53 L 147 53 C 147 36 136 24 120 24 Z M 104 44 C 105 36 111 31 120 31 C 128 31 135 36 136 44 Z" />
+            <!-- third 'e' with pedestal arch aligned -->
+            <g transform="translate(138, 14) scale(0.55)">
+              <path d="M 52 14 C 30 14 14 30 14 52 C 14 72 28 85 52 87 C 72 89 87 83 93 78 L 93 64 C 84 70 70 73 52 71 C 34 69 29 58 29 48 L 93 48 C 93 24 76 14 52 14 Z M 30 37 C 32 26 40 23 52 23 C 64 23 74 26 76 37 Z" />
+              <path d="M 12 88 L 12 112 L 26 112 L 26 100 C 33 93 43 90 53 90 C 63 90 73 93 79 100 L 79 112 L 93 112 L 93 88 C 78 89 65 87 53 86 C 39 85 24 87 12 88 Z" />
+            </g>
+            <!-- 'k' -->
+            <path d="M 204 6 L 216 6 L 216 38 L 234 16 L 250 16 L 227 41 L 251 77 L 236 77 L 217 50 L 216 52 L 216 77 L 204 77 Z" />
+          </g>
+        </svg>
+      </div>
+      <p class="brand-tagline">Crafted with excellence.</p>
+    </div>
+  </div>
+
+</body>
+</html>
